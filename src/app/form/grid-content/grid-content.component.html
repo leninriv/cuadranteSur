@@ -1,0 +1,152 @@
+<div nz-row>
+    <div nz-col nzSpan="12" class="grid-content-container">
+        <app-question-block [blockTitle]="'Datos personales'">
+            <app-text-input label="Apellidos" (onChangeForm)="onChangeForm($event)"></app-text-input>
+            <app-text-input label="Nombres" (onChangeForm)="onChangeForm($event)"> </app-text-input>
+            <app-text-input label="Cédula de identidad" (onChangeForm)="onChangeForm($event)"> </app-text-input>
+
+            <div nz-row>
+                <div nz-col nzSpan="12" style="padding-right: 5px;">
+                    <app-date-input label="Fecha de nacimiento" (onChangeForm)="onChangeForm($event)"></app-date-input>
+                </div>
+                <div nz-col nzSpan="12">
+                    <app-text-input label="Edad al momento de elección" (onChangeForm)="onChangeForm($event)"> </app-text-input>
+                </div>
+            </div>
+
+            <app-radio-input label="Sexo" (onChangeForm)="onChangeForm($event)" [options]="['Masculino', 'Femenino', 'No Binario']"> </app-radio-input>
+        </app-question-block>
+    </div>
+
+    <div nz-col nzSpan="12" class="grid-content-container">
+        <app-question-block [blockTitle]="'Contactos'">
+            <app-text-input label="Alterno" (onChangeForm)="onChangeForm($event)"> </app-text-input>
+            <div nz-row>
+                <div nz-col nzSpan="12" style="padding-right: 5px;">
+                    <app-select-input label="Circunscripción" (onChangeForm)="onChangeForm($event)" [options]="['Ecuador', 'Otro']"></app-select-input>
+                </div>
+                <div nz-col nzSpan="12" style="padding-left: 5px;">
+                    <app-select-input label="Partido o alianza" (onChangeForm)="onChangeForm($event)" [options]="['PSC', 'Creo', 'Otro']"></app-select-input>
+                </div>
+            </div>
+            <app-text-input label="Medio de contacto 1" (onChangeForm)="onChangeForm($event)"> </app-text-input>
+            <app-text-input label="Medio de contacto 2" (onChangeForm)="onChangeForm($event)"> </app-text-input>
+        </app-question-block>
+    </div>
+</div>
+
+<div nz-row>
+    <div nz-col nzSpan="24" class="grid-content-container">
+        <app-question-block blockTitle="Formación académica">
+            <app-academy-block *ngFor="let option of arrayBlock1" (onChangeForm)="onChangeFormBlock($event)" [index]="option"></app-academy-block>
+            <br />
+            <button nz-button nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock1)">Nuevo Registro <i nz-icon nzType="plus" nzTheme="outline"></i></button>
+        </app-question-block>
+    </div>
+</div>
+
+<div nz-row>
+    <div nz-col nzSpan="24" class="grid-content-container">
+        <app-question-block blockTitle="Elecciones Previas">
+            <app-previous-elections-block *ngFor="let option of arrayBlock2" (onChangeForm)="onChangeFormBlock($event)" [index]="option"></app-previous-elections-block>
+            <br />
+            <button nz-button nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock2)">Nuevo Registro <i nz-icon nzType="plus" nzTheme="outline"></i></button>
+        </app-question-block>
+    </div>
+</div>
+
+<div nz-row>
+    <div nz-col nzSpan="24" class="grid-content-container">
+        <app-question-block blockTitle="Trayectoria en servicio público">
+            <app-trayectory-service *ngFor="let option of arrayBlock3" (onChangeForm)="onChangeFormBlock($event)" [index]="option"></app-trayectory-service>
+            <br />
+            <button nz-button nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock3)">Nuevo Registro <i nz-icon nzType="plus" nzTheme="outline"></i></button>
+        </app-question-block>
+    </div>
+</div>
+
+<div nz-row>
+    <div nz-col nzSpan="24" class="grid-content-container">
+        <app-question-block blockTitle="Administrador en compañías y sociedades">
+            <app-companies-societies *ngFor="let option of arrayBlock4" (onChangeForm)="onChangeFormBlock($event)" [index]="option"></app-companies-societies>
+            <br />
+            <button nz-button nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock4)">Nuevo Registro <i nz-icon nzType="plus" nzTheme="outline"></i></button>
+        </app-question-block>
+    </div>
+</div>
+
+<div nz-row>
+    <div nz-col nzSpan="24" class="grid-content-container">
+        <app-question-block blockTitle="Accionista en compañías y sociedades">
+            <app-shareholder-companies-societies *ngFor="let option of arrayBlock5" (onChangeForm)="onChangeFormBlock($event)" [index]="option"></app-shareholder-companies-societies>
+            <br />
+            <button nz-button nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock5)">Nuevo Registro <i nz-icon nzType="plus" nzTheme="outline"></i></button>
+        </app-question-block>
+    </div>
+</div>
+
+<div nz-row>
+    <div nz-col nzSpan="12" class="grid-content-container">
+        <app-question-block blockTitle="Declaración de impuesto a la renta">
+            <app-year-value *ngFor="let option of arrayBlock6" (onChangeForm)="onChangeFormBlock($event)" [index]="option" blockname="tax_declaration"></app-year-value>
+            <br />
+            <button nz-button nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock6)">Nuevo Registro <i nz-icon nzType="plus" nzTheme="outline"></i></button>
+        </app-question-block>
+    </div>
+
+    <div nz-col nzSpan="12" class="grid-content-container">
+        <app-question-block blockTitle="Declaración de impuesto a la salidad de divisas">
+            <app-year-value *ngFor="let option of arrayBlock7" (onChangeForm)="onChangeFormBlock($event)" [index]="option" blockname="taxes_foreign_currency"></app-year-value>
+            <br />
+            <button nz-button nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock7)">Nuevo Registro <i nz-icon nzType="plus" nzTheme="outline"></i></button>
+        </app-question-block>
+    </div>
+</div>
+
+<div nz-row>
+    <div nz-col nzSpan="24" class="grid-content-container">
+        <app-question-block blockTitle="Procesos judiciales (Actor/Ofendido)">
+            <app-legal-proceedings *ngFor="let option of arrayBlock8" (onChangeForm)="onChangeFormBlock($event)" [index]="option" blockname="legal_proceedings_actor" [actor]="true"></app-legal-proceedings>
+            <br />
+            <button nz-button nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock8)">Nuevo Registro <i nz-icon nzType="plus" nzTheme="outline"></i></button>
+        </app-question-block>
+    </div>
+</div>
+
+<div nz-row>
+    <div nz-col nzSpan="24" class="grid-content-container">
+        <app-question-block blockTitle="Procesos judiciales (Demandado/Procesado)">
+            <app-legal-proceedings *ngFor="let option of arrayBlock9" (onChangeForm)="onChangeFormBlock($event)" [index]="option" blockname="legal_proceedings_defendant" [actor]="false"></app-legal-proceedings>
+            <br />
+            <button nz-button nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock9)">Nuevo Registro <i nz-icon nzType="plus" nzTheme="outline"></i></button>
+        </app-question-block>
+    </div>
+</div>
+
+<div nz-row>
+    <div nz-col nzSpan="24" class="grid-content-container">
+        <app-question-block blockTitle="Pensiones alimenticias">
+            <app-alimony-pensions *ngFor="let option of arrayBlock10" (onChangeForm)="onChangeFormBlock($event)" [index]="option"></app-alimony-pensions>
+            <br />
+            <button nz-button nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock10)">Nuevo Registro <i nz-icon nzType="plus" nzTheme="outline"></i></button>
+        </app-question-block>
+    </div>
+</div>
+
+<div nz-row>
+    <div nz-col nzSpan="12" class="grid-content-container">
+        <app-question-block [blockTitle]="'Redes sociales'">
+            <app-text-input label="Página web" (onChangeForm)="onChangeForm($event)"></app-text-input>
+            <app-text-input label="Facebook" (onChangeForm)="onChangeForm($event)"> </app-text-input>
+            <app-text-input label="Twiter" (onChangeForm)="onChangeForm($event)"> </app-text-input>
+            <app-text-input label="Instagram" (onChangeForm)="onChangeForm($event)"> </app-text-input>
+        </app-question-block>
+    </div>
+
+    <div nz-col nzSpan="12" class="grid-content-container">
+        <app-question-block [blockTitle]="'Datos adicionales'">
+            <app-text-input label="Hallasgos en fuentes digitales" (onChangeForm)="onChangeForm($event)"> </app-text-input>
+            <app-text-input label="Valoración Final" (onChangeForm)="onChangeForm($event)"> </app-text-input>
+        </app-question-block>
+    </div>
+</div>

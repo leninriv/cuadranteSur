@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "catalogo-cuadrante-sur",
+      "public": "dist/catalogo-cuadrante-sur",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

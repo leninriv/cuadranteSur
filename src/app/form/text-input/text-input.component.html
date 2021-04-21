@@ -1,0 +1,4 @@
+<app-input-field [label]="label">
+    <input nz-input [nzSize]="'large'" placeholder="{{placeholder}}" [(ngModel)]="value"
+        (ngModelChange)="onChangeValue($event)" />
+</app-input-field>

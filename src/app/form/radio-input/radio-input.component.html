@@ -1,0 +1,5 @@
+<app-input-field [label]="label">
+  <nz-radio-group [(ngModel)]="value" nzSize="large" (ngModelChange)="onChangeValue($event)">
+    <label *ngFor="let option of options" nz-radio-button [nzValue]="option">{{option}}</label>
+  </nz-radio-group>
+</app-input-field>

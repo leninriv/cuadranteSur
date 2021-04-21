@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "cuadrante-sur": {
+      "hosting": {
+        "catalogo-cuadrante-sur": [
+          "cuadrante-sur"
+        ]
+      }
+    }
+  }
+}

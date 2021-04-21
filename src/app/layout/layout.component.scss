@@ -1,0 +1,74 @@
+.trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.trigger:hover {
+    color: #1890ff;
+}
+
+.logo {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+}
+
+.layout-container {
+    height: 100%;
+    .ant-layout-has-sider {
+        height: 100%;
+    }
+}
+
+.ant-layout-header {
+    height: 40px !important;
+    line-height: 43px !important;
+    .trigger {
+        line-height: 42px !important;
+    }
+}
+
+nz-header {
+    background: #fff;
+    padding: 0;
+}
+
+nz-content {
+    margin: 0 16px;
+}
+
+nz-breadcrumb {
+    margin: 16px 0;
+}
+
+.inner-content {
+    padding: 25px 5px;
+    padding-bottom: 0px;
+    background: transparent;
+}
+
+.layout-global-content {
+    background: border-box;
+    height: inherit;
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+.inner-content__padding {
+    height: 20px;
+    width: 100%;
+    background: #f0f2f5;
+}
+
+nz-footer {
+    text-align: center;
+}
+
+.ant-layout-content {
+    .inner-content {
+        height: 100%;
+    }
+}

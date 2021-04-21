@@ -1,0 +1,6 @@
+<app-input-field [label]="label">
+  <nz-select [(ngModel)]="value" nzSize="large" nzShowSearch nzAllowClear nzPlaceHolder="Seleccionar"
+    (ngModelChange)="onChangeValue($event)">
+    <nz-option *ngFor="let option of options" [nzLabel]="option" [nzValue]="option"></nz-option>
+  </nz-select>
+</app-input-field>
