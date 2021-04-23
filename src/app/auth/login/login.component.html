@@ -1,35 +1,34 @@
 <div class="loging-container">
     <div class="loging-buttons__content">
         <div class="loging-image__content">
-            <h2>Cuadrante Sur</h2>
-            <img class="loging-image" src="https://picsum.photos/200/300">
+            <h2>Iniciar Sessión</h2>
+            <img class="loging-image" src="../../../assets/images/logo.png">
         </div>
-        <form nz-form [formGroup]="validateForm" class="login-form" >
+        <form nz-form [formGroup]="validateForm" class="login-form">
             <nz-form-item>
-              <nz-form-control nzErrorTip="Please input your email!">
-                <nz-input-group nzPrefixIcon="user">
-                  <input type="text" nz-input formControlName="userName" placeholder="Email" />
-                </nz-input-group>
-              </nz-form-control>
+                <nz-form-control nzErrorTip="Please input your email!">
+                    <nz-input-group nzPrefixIcon="user">
+                        <input type="text" nz-input formControlName="userName" placeholder="Email" />
+                    </nz-input-group>
+                </nz-form-control>
             </nz-form-item>
             <nz-form-item>
-              <nz-form-control nzErrorTip="Please input your Password!">
-                <nz-input-group nzPrefixIcon="lock">
-                  <input type="password" nz-input formControlName="password" placeholder="Password" />
-                </nz-input-group>
-              </nz-form-control>
+                <nz-form-control nzErrorTip="Please input your Password!">
+                    <nz-input-group nzPrefixIcon="lock">
+                        <input type="password" nz-input formControlName="password" placeholder="Password" />
+                    </nz-input-group>
+                </nz-form-control>
             </nz-form-item>
             <div nz-row class="login-form-margin">
-              <div nz-col [nzSpan]="12">
-                <label nz-checkbox formControlName="remember">
-                  <span>Remember me</span>
-                </label>
-              </div>
-              <div nz-col [nzSpan]="12">
-                <a class="login-form-forgot">Forgot password</a>
-              </div>
+                <div nz-col [nzSpan]="6">
+                    <label nz-checkbox>
+          </label>
+                </div>
+                <div nz-col [nzSpan]="18">
+                    <a class="login-form-forgot">Olvidaste tu contraseña?</a>
+                </div>
             </div>
             <button nz-button [nzLoading]="loading" class="login-form-button login-form-margin" [nzType]="'primary'" (click)="submitForm()">Log in</button>
-          </form>
+        </form>
     </div>
 </div>

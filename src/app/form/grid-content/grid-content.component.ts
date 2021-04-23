@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AsambleaService } from 'src/app/services/asamblea.service';
 import { cloneDeep } from 'src/utilities/global';
 
 @Component({
@@ -19,16 +20,14 @@ export class GridContentComponent implements OnInit {
   arrayBlock8 = [0]; // Legal proceedings actor
   arrayBlock9 = [0]; // Legal proceedings defendant
   arrayBlock10 = [0]; // Alimony pensions
- 
 
-  constructor() {
+  constructor(private asambleaService: AsambleaService) {
     this.form = {};
   }
 
   ngOnInit(): void {
 
   }
-
 
   onChangeForm(event: any) {
     const formCopy = cloneDeep(this.form);
@@ -55,6 +54,5 @@ export class GridContentComponent implements OnInit {
   pushBlockItem(array: Array<number>) {
     array.push(array.length);
   }
-
 
 }

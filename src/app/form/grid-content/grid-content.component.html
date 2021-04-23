@@ -67,7 +67,7 @@
 
 <div nz-row>
     <div nz-col nzSpan="24" class="grid-content-container">
-        <app-question-block blockTitle="Administrador en compañías y sociedades">
+        <app-question-block blockTitle="Participación en empresas y sociedades">
             <app-companies-societies *ngFor="let option of arrayBlock4" (onChangeForm)="onChangeFormBlock($event)" [index]="option"></app-companies-societies>
             <br />
             <button nz-button nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock4)">Nuevo Registro <i nz-icon nzType="plus" nzTheme="outline"></i></button>
@@ -145,7 +145,7 @@
 
     <div nz-col nzSpan="12" class="grid-content-container">
         <app-question-block [blockTitle]="'Datos adicionales'">
-            <app-text-input label="Hallasgos en fuentes digitales" (onChangeForm)="onChangeForm($event)"> </app-text-input>
+            <app-text-input label="Hallazgos en fuentes digitales" (onChangeForm)="onChangeForm($event)"> </app-text-input>
             <app-text-input label="Valoración Final" (onChangeForm)="onChangeForm($event)"> </app-text-input>
         </app-question-block>
     </div>

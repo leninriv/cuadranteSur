@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
+    private authService: AuthService,
     private message: NzMessageService) { }
 
   ngOnInit(): void {
@@ -22,7 +24,6 @@ export class LoginComponent implements OnInit {
     this.validateForm = this.fb.group({
       userName: [null, [Validators.required]],
       password: [null, [Validators.required]],
-      remember: [true]
     });
   }
 
@@ -34,11 +35,9 @@ export class LoginComponent implements OnInit {
       this.validateForm.controls[i].updateValueAndValidity();
     }
     if (this.validateForm.status === 'VALID') {
-      const { userName, password, remember } = this.validateForm.value;
-      // const isLoggedIn = await this.authService.login(userName, password, remember);
-      const isLoggedIn = true;
-      if (isLoggedIn) {
-        this.router.navigate(['/app/form']);
+      const { userName, password } = this.validateForm.value;
+      if (await this.authService.loging(userName, password)) {
+        this.router.navigate(['/']);
       }
     } else {
       this.message.create('error', 'Usuario o contrasena incorrectos');

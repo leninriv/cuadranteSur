@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzMessageModule } from 'ng-zorro-antd/message';
 
 import en from '@angular/common/locales/en';
 
@@ -24,6 +25,8 @@ import { environment } from 'src/environments/environment';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AuthService } from './services/auth.service';
+import { AsambleaService } from './services/asamblea.service';
 
 
 registerLocaleData(en);
@@ -41,8 +44,13 @@ registerLocaleData(en);
     NzButtonModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    NzMessageModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [
+    AuthService,
+    AsambleaService,
+    { provide: NZ_I18N, useValue: en_US }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
