@@ -8,6 +8,7 @@ import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
 
 import { FormsModule } from '@angular/forms';
 
@@ -27,9 +28,11 @@ import { ShareholderCompaniesSocietiesComponent } from './shareholder-companies-
 import { YearValueComponent } from './year-value/year-value.component';
 import { LegalProceedingsComponent } from './legal-proceedings/legal-proceedings.component';
 import { AlimonyPensionsComponent } from './alimony-pensions/alimony-pensions.component';
+import { TextAreaComponent } from './text-area/text-area.component';
+import { UploadImageInputComponent } from './upload-image-input/upload-image-input.component';
 
 @NgModule({
-  declarations: [GridContentComponent, QuestionBlockComponent, InputFieldComponent, TextInputComponent, DateInputComponent, RadioInputComponent, SelectInputComponent, AcademyBlockComponent, PreviousElectionsBlockComponent, TrayectoryServiceComponent, CompaniesSocietiesComponent, ShareholderCompaniesSocietiesComponent, YearValueComponent, LegalProceedingsComponent, AlimonyPensionsComponent],
+  declarations: [GridContentComponent, QuestionBlockComponent, InputFieldComponent, TextInputComponent, DateInputComponent, RadioInputComponent, SelectInputComponent, AcademyBlockComponent, PreviousElectionsBlockComponent, TrayectoryServiceComponent, CompaniesSocietiesComponent, ShareholderCompaniesSocietiesComponent, YearValueComponent, LegalProceedingsComponent, AlimonyPensionsComponent, TextAreaComponent, UploadImageInputComponent],
   imports: [
     CommonModule,
     FormRoutingModule,
@@ -41,6 +44,7 @@ import { AlimonyPensionsComponent } from './alimony-pensions/alimony-pensions.co
     NzSelectModule,
     NzButtonModule,
     NzIconModule,
+    NzUploadModule,
     FormsModule,
   ]
 })

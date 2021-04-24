@@ -25,8 +25,10 @@ import { environment } from 'src/environments/environment';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AuthService } from './services/auth.service';
 import { AsambleaService } from './services/asamblea.service';
+import { UploadService } from './services/upload.service';
 
 
 registerLocaleData(en);
@@ -45,10 +47,12 @@ registerLocaleData(en);
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     NzMessageModule,
+    AngularFireStorageModule,
   ],
   providers: [
     AuthService,
     AsambleaService,
+    UploadService,
     { provide: NZ_I18N, useValue: en_US }
   ],
   bootstrap: [AppComponent]

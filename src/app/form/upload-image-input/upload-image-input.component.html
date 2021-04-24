@@ -1,0 +1,9 @@
+<app-input-field [label]="label">
+    <div class="avatar-uploader">
+        <ng-container *ngIf="!avatarUrl">
+            <i class="upload-icon" nz-icon [nzType]="loading ? 'loading' : 'picture'"></i>
+        </ng-container>
+        <img *ngIf="avatarUrl" [src]="avatarUrl" style="width: 100%" />
+    </div>
+    <input *ngIf="!avatarUrl" type="file" (change)="uploadFile($event)">
+</app-input-field>

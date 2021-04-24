@@ -6,10 +6,17 @@ import { NzMessageService } from 'ng-zorro-antd/message';
     providedIn: 'root'
 })
 export class AsambleaService {
-    constructor(private db: AngularFirestore, private message: NzMessageService) {}
+    constructor(private db: AngularFirestore, private msg: NzMessageService) { }
 
-    addReport(report: any) {
-        this.db.collection('asambleistas').add(report);
+    async addReport(report: any) {
+        try {
+            await this.db.collection('asambleistas').add(report);
+            this.msg.success('Record guardado con exito!');
+            return true;
+        } catch (error) {
+            this.msg.error('Error en la red, por favor intentar mas tarde');
+        }
+        return false;
     }
 
 }

@@ -6,16 +6,22 @@
             </div>
             <ul nz-menu nzTheme="dark" nzMode="inline">
                 <li nz-menu-item>
-                    <i nz-icon nzType="user"></i>
-                    <span>Usuario</span>
+                    <a>
+                        <i nz-icon nzType="user"></i>
+                        <span>Mi Perfil</span>
+                    </a>
                 </li>
-                <li nz-menu-item>
-                    <i nz-icon nzType="file"></i>
-                    <span>Formulario</span>
+                <li nz-menu-item nzMatchRouter>
+                    <a [routerLink]="['/', 'app', 'form', 'questionary']" >
+                        <i nz-icon nzType="file"></i>
+                        <span>Formulario</span>
+                    </a>
                 </li>
-                <li nz-menu-item>
-                    <i nz-icon nzType="search"></i>
-                    <span>Busqueda</span>
+                <li nz-menu-item nzMatchRouter>
+                    <a [routerLink]="['/', 'app', 'records', 'list']">
+                        <i nz-icon nzType="search"></i>
+                        <span>Registros</span>
+                    </a>
                 </li>
             </ul>
         </nz-sider>

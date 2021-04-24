@@ -13,6 +13,15 @@ const routes: Routes = [
         },
       ]
   },
+  {
+    path: 'records', component: LayoutComponent, children:
+      [
+        {
+          path: '',
+          loadChildren: () => import('../records/records.module').then(m => m.RecordsModule)
+        },
+      ]
+  },
 ];
 
 @NgModule({

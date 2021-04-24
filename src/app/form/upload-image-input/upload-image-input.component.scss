@@ -1,0 +1,16 @@
+.avatar-uploader {
+    width: 135px;
+    height: 135px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-color: lightgrey;
+    border-width: 1px;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.upload-icon {
+    font-size: 20px;
+}

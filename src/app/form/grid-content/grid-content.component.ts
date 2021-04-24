@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AsambleaService } from 'src/app/services/asamblea.service';
 import { cloneDeep } from 'src/utilities/global';
 
@@ -10,6 +11,7 @@ import { cloneDeep } from 'src/utilities/global';
 export class GridContentComponent implements OnInit {
   value?: string;
   form: any;
+  saving = false;
   arrayBlock1 = [0]; // academy-block
   arrayBlock2 = [0]; // previous-elections-block
   arrayBlock3 = [0]; // public service trayectory
@@ -21,7 +23,7 @@ export class GridContentComponent implements OnInit {
   arrayBlock9 = [0]; // Legal proceedings defendant
   arrayBlock10 = [0]; // Alimony pensions
 
-  constructor(private asambleaService: AsambleaService) {
+  constructor(private asambleaService: AsambleaService, private router: Router) {
     this.form = {};
   }
 
@@ -55,4 +57,21 @@ export class GridContentComponent implements OnInit {
     array.push(array.length);
   }
 
+  async saveForm() {
+    const success = await this.asambleaService.addReport(this.form);
+    this.saving = true;
+    if (success) {
+      setTimeout(() => {
+        this.resetComponent();
+      }, 1000);
+    } else {
+      this.saving = false;
+    }
+  }
+
+  resetComponent() {
+    this.router.navigateByUrl('/login', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/']);
+    });
+  }
 }
