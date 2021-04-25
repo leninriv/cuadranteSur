@@ -1,20 +1,20 @@
 <div nz-row>
     <div nz-col nzSpan="5" style="padding-right: 5px;">
-        <app-text-input label="Nombre" (onChangeForm)="onChangeValue($event)"></app-text-input>
+        <app-text-input label="Nombre" (onChangeForm)="onChangeValue($event)" [form]="form"></app-text-input>
     </div>
     <div nz-col nzSpan="4" style="padding-right: 5px;">
-        <app-text-input label="Cargo" (onChangeForm)="onChangeValue($event)"></app-text-input>
+        <app-text-input label="Cargo" (onChangeForm)="onChangeValue($event)" [form]="form"></app-text-input>
     </div>
     <div nz-col nzSpan="3" style="padding-right: 5px;">
-        <app-date-input label="Fecha" (onChangeForm)="onChangeValue($event)"></app-date-input>
+        <app-date-input label="Fecha" (onChangeForm)="onChangeValue($event)" [form]="form"></app-date-input>
     </div>
     <div nz-col nzSpan="3" style="padding-right: 5px;">
-        <app-text-input label="Objeto social" (onChangeForm)="onChangeValue($event)"></app-text-input>
+        <app-text-input label="Objeto social" (onChangeForm)="onChangeValue($event)" [form]="form"></app-text-input>
     </div>
     <div nz-col nzSpan="3" style="padding-right: 5px;">
-        <app-text-input label="CIIU" (onChangeForm)="onChangeValue($event)"></app-text-input>
+        <app-text-input label="CIIU" (onChangeForm)="onChangeValue($event)" [form]="form"></app-text-input>
     </div>
     <div nz-col nzSpan="6">
-        <app-text-input label="Descripción" (onChangeForm)="onChangeValue($event)"></app-text-input>
+        <app-text-input label="Descripción" (onChangeForm)="onChangeValue($event)" [form]="form"></app-text-input>
     </div>
 </div>

@@ -1,11 +1,11 @@
 <div nz-row>
     <div nz-col nzSpan="8" style="padding-right: 5px;">
-        <app-text-input label="Código de tarjeta" (onChangeForm)="onChangeValue($event)"></app-text-input>
+        <app-text-input label="Código de tarjeta" (onChangeForm)="onChangeValue($event)" [form]="form"></app-text-input>
     </div>
     <div nz-col nzSpan="8" style="padding-right: 5px;">
-        <app-text-input label="Proceso judicial" (onChangeForm)="onChangeValue($event)"></app-text-input>
+        <app-text-input label="Proceso judicial" (onChangeForm)="onChangeValue($event)" [form]="form"></app-text-input>
     </div>
     <div nz-col nzSpan="8">
-        <app-text-input label="Deuda" (onChangeForm)="onChangeValue($event)"></app-text-input>
+        <app-text-input label="Deuda" (onChangeForm)="onChangeValue($event)" [form]="form"></app-text-input>
     </div>
 </div>

@@ -1,17 +1,17 @@
 <div nz-row>
     <div nz-col nzSpan="6" style="padding-right: 5px;">
-        <app-text-input label="Cargo" (onChangeForm)="onChangeValue($event)"></app-text-input>
+        <app-text-input label="Cargo" (onChangeForm)="onChangeValue($event)" [form]="form"></app-text-input>
     </div>
     <div nz-col nzSpan="4" style="padding-right: 5px;">
-        <app-text-input label="Circunscripción" (onChangeForm)="onChangeValue($event)"></app-text-input>
+        <app-text-input label="Circunscripción" (onChangeForm)="onChangeValue($event)" [form]="form"></app-text-input>
     </div>
     <div nz-col nzSpan="6" style="padding-right: 5px;">
-        <app-text-input label="Organización política" (onChangeForm)="onChangeValue($event)"></app-text-input>
+        <app-text-input label="Organización política" (onChangeForm)="onChangeValue($event)" [form]="form"></app-text-input>
     </div>
     <div nz-col nzSpan="4" style="padding-right: 5px;">
-        <app-date-input label="Año" mode="year" (onChangeForm)="onChangeValue($event)"></app-date-input>
+        <app-date-input label="Año" mode="year" (onChangeForm)="onChangeValue($event)" [form]="form"></app-date-input>
     </div>
     <div nz-col nzSpan="4">
-        <app-radio-input label="Situación" (onChangeForm)="onChangeValue($event)" [options]="['Electo', 'No electo']"></app-radio-input>
+        <app-radio-input label="Situación" (onChangeForm)="onChangeValue($event)" [form]="form" [options]="['Electo', 'No electo']"></app-radio-input>
     </div>
 </div>

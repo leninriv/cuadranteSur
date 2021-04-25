@@ -14,6 +14,7 @@ import { FileUpload, UploadService } from 'src/app/services/upload.service';
 export class UploadImageInputComponent implements OnInit {
   @Input() label: string;
   @Input() initialValue?: string;
+  @Input() form: any;
   @Input() identificationCard?: string;
   @Output() public onChangeForm = new EventEmitter<any>();
   base64Image: any;
@@ -24,6 +25,14 @@ export class UploadImageInputComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.validateInitValue()
+  }
+
+  validateInitValue() {
+    const field = toSnakeCase(this.label);
+    if (this.form && this.form[field]) {
+      this.avatarUrl = this.form[field];
+    }
   }
 
   async uploadFile(event: any) {

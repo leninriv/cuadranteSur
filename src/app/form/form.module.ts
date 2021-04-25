@@ -9,6 +9,7 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 import { FormsModule } from '@angular/forms';
 
@@ -45,6 +46,7 @@ import { UploadImageInputComponent } from './upload-image-input/upload-image-inp
     NzButtonModule,
     NzIconModule,
     NzUploadModule,
+    NzSpinModule,
     FormsModule,
   ]
 })

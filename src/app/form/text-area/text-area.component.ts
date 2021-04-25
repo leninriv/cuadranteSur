@@ -10,6 +10,7 @@ export class TextAreaComponent implements OnInit {
   @Input() placeholder: string;
   @Input() label: string;
   @Input() initialValue?: string;
+  @Input() form: any;
   @Output() public onChangeForm = new EventEmitter<any>();
   value?: any;
 
@@ -19,8 +20,13 @@ export class TextAreaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.initialValue) {
-      this.value = this.initialValue;
+    this.validateInitValue()
+  }
+
+  validateInitValue() {
+    const field = toSnakeCase(this.label);
+    if (this.form && this.form[field]) {
+      this.value = this.form[field];
     }
   }
 

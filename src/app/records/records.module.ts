@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
 
 import { RecordsRoutingModule } from './records-routing.module';
 import { ListViewComponent } from './list-view/list-view.component';
@@ -17,6 +18,7 @@ import { ListViewComponent } from './list-view/list-view.component';
     RecordsRoutingModule,
     NzListModule,
     NzSkeletonModule,
+    NzEmptyModule,
   ]
 })
 export class RecordsModule { }

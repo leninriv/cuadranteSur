@@ -8,8 +8,8 @@ import { toSnakeCase } from 'src/utilities/global';
 })
 export class TextInputComponent implements OnInit {
   @Input() placeholder: string;
+  @Input() form: any;
   @Input() label: string;
-  @Input() initialValue?: string;
   @Output() public onChangeForm = new EventEmitter<any>();
   value?: any;
 
@@ -19,8 +19,13 @@ export class TextInputComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.initialValue) {
-      this.value = this.initialValue;
+    this.validateInitValue()
+  }
+
+  validateInitValue() {
+    const field = toSnakeCase(this.label);
+    if (this.form && this.form[field]) {
+      this.value = this.form[field];
     }
   }
 

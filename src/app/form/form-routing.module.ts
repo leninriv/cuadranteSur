@@ -5,6 +5,7 @@ import { GridContentComponent } from './grid-content/grid-content.component';
 const routes: Routes = [
   { path: '', redirectTo: 'questionary', pathMatch: 'full' },
   { path: 'questionary', component: GridContentComponent },
+  { path: 'questionary:/id', component: GridContentComponent },
 ];
 
 @NgModule({

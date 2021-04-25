@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { AsambleaService } from 'src/app/services/asamblea.service';
 
 const count = 5;
 const fakeDataUrl = 'https://randomuser.me/api/?results=5&inc=name,gender,email,nat&noinfo';
@@ -12,32 +13,29 @@ const fakeDataUrl = 'https://randomuser.me/api/?results=5&inc=name,gender,email,
 })
 export class ListViewComponent implements OnInit {
   initLoading = true; // bug
-  loadingMore = false;
+  loadingMore = true;
   data: any[] = [];
-  list: Array<{ loading: boolean; name: any }> = [];
+  list: Array<any> = [{ loading: true }, { loading: true }, { loading: true }, { loading: true }];
 
-  constructor(private http: HttpClient, private msg: NzMessageService) {}
+  constructor(private msg: NzMessageService, private asambleaService: AsambleaService, private router: Router,) { }
 
   ngOnInit(): void {
-    this.getData((res: any) => {
-      this.data = res.results;
-      this.list = res.results;
-      this.initLoading = false;
-    });
+    this.onLoadData()
   }
 
-  getData(callback: (res: any) => void): void {
-    this.http.get(fakeDataUrl).subscribe((res: any) => callback(res));
+  async onLoadData() {
+    this.list = await this.asambleaService.getRemoteReports()
+    this.initLoading = false;
+    this.loadingMore = false;
+    console.log(this.list)
   }
 
-  onLoadMore(): void {
-    this.loadingMore = true;
-    this.list = this.data.concat([...Array(count)].fill({}).map(() => ({ loading: true, name: {} })));
-    this.http.get(fakeDataUrl).subscribe((res: any) => {
-      this.data = this.data.concat(res.results);
-      this.list = [...this.data];
-      this.loadingMore = false;
-    });
+  async onLoadMore() {
+    console.log('aaaaa', await this.asambleaService.getRemoteReports());
+  }
+
+  navigateToEdit(id: any) {
+    this.router.navigate(['/', 'app', 'form', 'questionary', { id }]);
   }
 
   edit(item: any): void {
