@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
       userName: [null, [Validators.required]],
       password: [null, [Validators.required]],
     });
+    this.authService.logout();
   }
 
   async submitForm() {

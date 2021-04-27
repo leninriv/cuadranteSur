@@ -57,11 +57,17 @@
     <div nz-row>
         <div nz-col nzSpan="24" class="grid-content-container">
             <app-question-block blockTitle="Formación académica">
-                <app-academy-block *ngFor="let option of arrayBlock1" (onChangeForm)="onChangeFormBlock($event)"
-                    [index]="option" blockname="academy" [initialForm]="form"></app-academy-block>
+                <label nz-checkbox [(ngModel)]="regisetrBlock1" (ngModelChange)="onChangeRegister($event,'academy')">No registra</label>
+                <br /><br />
+                <div *ngIf="!regisetrBlock1">
+                    <app-academy-block *ngFor="let option of arrayBlock1" (onChangeForm)="onChangeFormBlock($event)"
+                        [index]="option" blockname="academy" [initialForm]="form"></app-academy-block>
+                </div>
                 <br />
-                <button nz-button nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock1)">Nuevo Registro <i
-                        nz-icon nzType="plus" nzTheme="outline"></i></button>
+                <button [disabled]="regisetrBlock1" nz-button nzType="primary" nzSize="large"
+                    (click)="pushBlockItem(arrayBlock1)">Nuevo Registro <i nz-icon nzType="plus"
+                        nzTheme="outline"></i></button>
+
             </app-question-block>
         </div>
     </div>
@@ -69,11 +75,15 @@
     <div nz-row>
         <div nz-col nzSpan="24" class="grid-content-container">
             <app-question-block blockTitle="Partcipación electoral previa">
-                <app-previous-elections-block *ngFor="let option of arrayBlock2" [initialForm]="form"
-                    (onChangeForm)="onChangeFormBlock($event)" [index]="option" blockname="previous_elections">
-                </app-previous-elections-block>
+                <label nz-checkbox [(ngModel)]="regisetrBlock2" (ngModelChange)="onChangeRegister($event,'previous_elections')">No registra</label>
+                <br /><br />
+                <div *ngIf="!regisetrBlock2">
+                    <app-previous-elections-block *ngFor="let option of arrayBlock2" [initialForm]="form"
+                        (onChangeForm)="onChangeFormBlock($event)" [index]="option" blockname="previous_elections">
+                    </app-previous-elections-block>
+                </div>
                 <br />
-                <button nz-button nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock2)">Nuevo Registro <i
+                <button nz-button [disabled]="regisetrBlock2" nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock2)">Nuevo Registro <i
                         nz-icon nzType="plus" nzTheme="outline"></i></button>
             </app-question-block>
         </div>
@@ -82,10 +92,14 @@
     <div nz-row>
         <div nz-col nzSpan="24" class="grid-content-container">
             <app-question-block blockTitle="Trayectoria en servicio público">
-                <app-trayectory-service *ngFor="let option of arrayBlock3" (onChangeForm)="onChangeFormBlock($event)" 
+                <label nz-checkbox [(ngModel)]="regisetrBlock3" (ngModelChange)="onChangeRegister($event,'trayectory_service')">No registra</label>
+                <br /><br />
+                <div *ngIf="!regisetrBlock3">
+                <app-trayectory-service *ngFor="let option of arrayBlock3" (onChangeForm)="onChangeFormBlock($event)"
                     [index]="option" blockname="trayectory_service" [initialForm]="form"></app-trayectory-service>
+                </div>
                 <br />
-                <button nz-button nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock3)">Nuevo Registro <i
+                <button nz-button [disabled]="regisetrBlock3" nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock3)">Nuevo Registro <i
                         nz-icon nzType="plus" nzTheme="outline"></i></button>
             </app-question-block>
         </div>
@@ -94,10 +108,14 @@
     <div nz-row>
         <div nz-col nzSpan="24" class="grid-content-container">
             <app-question-block blockTitle="Administración en compañías y sociedades">
+                <label nz-checkbox [(ngModel)]="regisetrBlock4" (ngModelChange)="onChangeRegister($event,'companies_societies')">No registra</label>
+                <br /><br />
+                <div *ngIf="!regisetrBlock4">
                 <app-companies-societies *ngFor="let option of arrayBlock4" (onChangeForm)="onChangeFormBlock($event)"
                     [index]="option" blockname="companies_societies" [initialForm]="form"></app-companies-societies>
+                </div>
                 <br />
-                <button nz-button nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock4)">Nuevo Registro <i
+                <button nz-button [disabled]="regisetrBlock4" nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock4)">Nuevo Registro <i
                         nz-icon nzType="plus" nzTheme="outline"></i></button>
             </app-question-block>
         </div>
@@ -106,11 +124,15 @@
     <div nz-row>
         <div nz-col nzSpan="24" class="grid-content-container">
             <app-question-block blockTitle="Accionista en compañías y sociedades">
+                <label nz-checkbox [(ngModel)]="regisetrBlock5" (ngModelChange)="onChangeRegister($event,'shareholder_companies_societies')">No registra</label>
+                <br /><br />
+                <div *ngIf="!regisetrBlock5">
                 <app-shareholder-companies-societies *ngFor="let option of arrayBlock5" [initialForm]="form"
                     blockname="shareholder_companies_societies" (onChangeForm)="onChangeFormBlock($event)"
                     [index]="option"></app-shareholder-companies-societies>
+                </div>
                 <br />
-                <button nz-button nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock5)">Nuevo Registro <i
+                <button nz-button [disabled]="regisetrBlock5" nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock5)">Nuevo Registro <i
                         nz-icon nzType="plus" nzTheme="outline"></i></button>
             </app-question-block>
         </div>
@@ -119,20 +141,28 @@
     <div nz-row>
         <div nz-col nzSpan="12" class="grid-content-container">
             <app-question-block blockTitle="Declaración de impuesto a la renta">
+                <label nz-checkbox [(ngModel)]="regisetrBlock6" (ngModelChange)="onChangeRegister($event,'tax_declaration')">No registra</label>
+                <br /><br />
+                <div *ngIf="!regisetrBlock6">
                 <app-year-value *ngFor="let option of arrayBlock6" (onChangeForm)="onChangeFormBlock($event)"
                     [index]="option" blockname="tax_declaration" [initialForm]="form"></app-year-value>
+                </div>
                 <br />
-                <button nz-button nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock6)">Nuevo Registro <i
+                <button nz-button [disabled]="regisetrBlock6" nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock6)">Nuevo Registro <i
                         nz-icon nzType="plus" nzTheme="outline"></i></button>
             </app-question-block>
         </div>
 
         <div nz-col nzSpan="12" class="grid-content-container">
             <app-question-block blockTitle="Declaración de impuesto a la salidad de divisas">
+                <label nz-checkbox [(ngModel)]="regisetrBlock7" (ngModelChange)="onChangeRegister($event,'taxes_foreign_currency')">No registra</label>
+                <br /><br />
+                <div *ngIf="!regisetrBlock7">
                 <app-year-value *ngFor="let option of arrayBlock7" (onChangeForm)="onChangeFormBlock($event)"
                     [index]="option" blockname="taxes_foreign_currency" [initialForm]="form"></app-year-value>
+                </div>
                 <br />
-                <button nz-button nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock7)">Nuevo Registro <i
+                <button nz-button [disabled]="regisetrBlock7" nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock7)">Nuevo Registro <i
                         nz-icon nzType="plus" nzTheme="outline"></i></button>
             </app-question-block>
         </div>
@@ -141,10 +171,15 @@
     <div nz-row>
         <div nz-col nzSpan="24" class="grid-content-container">
             <app-question-block blockTitle="Procesos judiciales (Actor/Ofendido)">
+                <label nz-checkbox [(ngModel)]="regisetrBlock8" (ngModelChange)="onChangeRegister($event,'legal_proceedings_actor')">No registra</label>
+                <br /><br />
+                <div *ngIf="!regisetrBlock8">
                 <app-legal-proceedings *ngFor="let option of arrayBlock8" (onChangeForm)="onChangeFormBlock($event)"
-                    [index]="option" blockname="legal_proceedings_actor" [actor]="true" [initialForm]="form"></app-legal-proceedings>
+                    [index]="option" blockname="legal_proceedings_actor" [actor]="true" [initialForm]="form">
+                </app-legal-proceedings>
+            </div>
                 <br />
-                <button nz-button nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock8)">Nuevo Registro <i
+                <button nz-button [disabled]="regisetrBlock8" nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock8)">Nuevo Registro <i
                         nz-icon nzType="plus" nzTheme="outline"></i></button>
             </app-question-block>
         </div>
@@ -153,10 +188,15 @@
     <div nz-row>
         <div nz-col nzSpan="24" class="grid-content-container">
             <app-question-block blockTitle="Procesos judiciales (Demandado/Procesado)">
+                <label nz-checkbox [(ngModel)]="regisetrBlock9" (ngModelChange)="onChangeRegister($event,'legal_proceedings_defendant')">No registra</label>
+                <br /><br />
+                <div *ngIf="!regisetrBlock9">
                 <app-legal-proceedings *ngFor="let option of arrayBlock9" (onChangeForm)="onChangeFormBlock($event)"
-                    [index]="option" blockname="legal_proceedings_defendant" [actor]="false" [initialForm]="form"></app-legal-proceedings>
+                    [index]="option" blockname="legal_proceedings_defendant" [actor]="false" [initialForm]="form">
+                </app-legal-proceedings>
+                </div>
                 <br />
-                <button nz-button nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock9)">Nuevo Registro <i
+                <button nz-button [disabled]="regisetrBlock9" nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock9)">Nuevo Registro <i
                         nz-icon nzType="plus" nzTheme="outline"></i></button>
             </app-question-block>
         </div>
@@ -165,10 +205,14 @@
     <div nz-row>
         <div nz-col nzSpan="24" class="grid-content-container">
             <app-question-block blockTitle="Pensiones alimenticias">
+                <label nz-checkbox [(ngModel)]="regisetrBlock10" (ngModelChange)="onChangeRegister($event,'alimony_pensions')">No registra</label>
+                <br /><br />
+                <div *ngIf="!regisetrBlock10">
                 <app-alimony-pensions *ngFor="let option of arrayBlock10" (onChangeForm)="onChangeFormBlock($event)"
                     blockname="alimony_pensions" [index]="option" [initialForm]="form"></app-alimony-pensions>
+                </div>
                 <br />
-                <button nz-button nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock10)">Nuevo Registro
+                <button nz-button [disabled]="regisetrBlock10" nzType="primary" nzSize="large" (click)="pushBlockItem(arrayBlock10)">Nuevo Registro
                     <i nz-icon nzType="plus" nzTheme="outline"></i></button>
             </app-question-block>
         </div>
@@ -192,9 +236,11 @@
                 </app-text-input>
                 <app-text-input [form]="form" label="Idea fuerza de campaña" (onChangeForm)="onChangeForm($event)">
                 </app-text-input>
-                <app-text-area [form]="form" label="Criterio de informante calificado" (onChangeForm)="onChangeForm($event)">
+                <app-text-area [form]="form" label="Criterio de informante calificado"
+                    (onChangeForm)="onChangeForm($event)">
                 </app-text-area>
-                <app-text-area [form]="form" label="Observaciones" (onChangeForm)="onChangeForm($event)"> </app-text-area>
+                <app-text-area [form]="form" label="Observaciones" (onChangeForm)="onChangeForm($event)">
+                </app-text-area>
                 <app-text-input [form]="form" label="Anexos" (onChangeForm)="onChangeForm($event)"> </app-text-input>
             </app-question-block>
         </div>

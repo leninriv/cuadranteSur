@@ -25,6 +25,17 @@ export class GridContentComponent implements OnInit {
   arrayBlock9 = [0]; // Legal proceedings defendant
   arrayBlock10 = [0]; // Alimony pensions
 
+  regisetrBlock1 = false;
+  regisetrBlock2 = false;
+  regisetrBlock3 = false;
+  regisetrBlock4 = false;
+  regisetrBlock5 = false;
+  regisetrBlock6 = false;
+  regisetrBlock7 = false;
+  regisetrBlock8 = false;
+  regisetrBlock9 = false;
+  regisetrBlock10 = false;
+
   constructor(private asambleaService: AsambleaService, private router: Router, private _route: ActivatedRoute,) {
     this.form = {};
   }
@@ -44,18 +55,17 @@ export class GridContentComponent implements OnInit {
   }
 
   validateBlocksArray(form: any) {
-    if (form['academy']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock1, form['academy'].length) };
-    if (form['previous_elections']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock2, form['previous_elections'].length) };
-    if (form['trayectory_service']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock3, form['trayectory_service'].length) };
-    if (form['companies_societies']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock4, form['companies_societies'].length) };
-    if (form['shareholder_companies_societies']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock5, form['shareholder_companies_societies'].length) };
-    if (form['tax_declaration']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock6, form['tax_declaration'].length) };
-    if (form['taxes_foreign_currency']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock7, form['taxes_foreign_currency'].length) };
-    if (form['legal_proceedings_actor']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock8, form['legal_proceedings_actor'].length) };
-    if (form['legal_proceedings_defendant']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock9, form['legal_proceedings_defendant'].length) };
-    if (form['alimony_pensions']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock10, form['alimony_pensions'].length) };
+    if (typeof form['academy'] !== 'string' && form['academy']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock1, form['academy'].length) } else if (form['academy'] === 'No Registra') { this.regisetrBlock1 = true; };
+    if (typeof form['previous_elections'] !== 'string' && form['previous_elections']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock2, form['previous_elections'].length) } else if (form['previous_elections'] === 'No Registra') { this.regisetrBlock2 = true; };
+    if (typeof form['trayectory_service'] !== 'string' && form['trayectory_service']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock3, form['trayectory_service'].length) } else if (form['trayectory_service'] === 'No Registra') { this.regisetrBlock3 = true; };
+    if (typeof form['companies_societies'] !== 'string' && form['companies_societies']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock4, form['companies_societies'].length) } else if (form['companies_societies'] === 'No Registra') { this.regisetrBlock4 = true; };
+    if (typeof form['shareholder_companies_societies'] !== 'string' && form['shareholder_companies_societies']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock5, form['shareholder_companies_societies'].length) } else if (form['shareholder_companies_societies'] === 'No Registra') { this.regisetrBlock5 = true; };
+    if (typeof form['tax_declaration'] !== 'string' && form['tax_declaration']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock6, form['tax_declaration'].length) } else if (form['tax_declaration'] === 'No Registra') { this.regisetrBlock6 = true; };
+    if (typeof form['taxes_foreign_currency'] !== 'string' && form['taxes_foreign_currency']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock7, form['taxes_foreign_currency'].length) } else if (form['taxes_foreign_currency'] === 'No Registra') { this.regisetrBlock7 = true; };
+    if (typeof form['legal_proceedings_actor'] !== 'string' && form['legal_proceedings_actor']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock8, form['legal_proceedings_actor'].length) } else if (form['legal_proceedings_actor'] === 'No Registra') { this.regisetrBlock8 = true; };
+    if (typeof form['legal_proceedings_defendant'] !== 'string' && form['legal_proceedings_defendant']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock9, form['legal_proceedings_defendant'].length) } else if (form['legal_proceedings_defendant'] === 'No Registra') { this.regisetrBlock9 = true; };
+    if (typeof form['alimony_pensions'] !== 'string' && form['alimony_pensions']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock10, form['alimony_pensions'].length) } else if (form['alimony_pensions'] === 'No Registra') { this.regisetrBlock10 = true; };
   }
-
 
   addItemsToInitialArray(array: Array<number>, newLength: number) {
     for (var i = 1; i < newLength; i++) {
@@ -108,8 +118,16 @@ export class GridContentComponent implements OnInit {
   }
 
   resetComponent() {
-    this.router.navigateByUrl('/login', { skipLocationChange: true }).then(() => {
+    this.router.navigateByUrl('/loading', { skipLocationChange: true }).then(() => {
       this.router.navigate(['/']);
     });
+  }
+
+  onChangeRegister(value: any, blockname: string) {
+    if (value) {
+      this.onChangeForm({ field: blockname, value: 'No Registra' })
+    } else {
+      this.onChangeForm({ field: blockname, value: '' })
+    }
   }
 }

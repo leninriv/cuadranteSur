@@ -10,6 +10,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 
 import { FormsModule } from '@angular/forms';
 
@@ -47,6 +48,7 @@ import { UploadImageInputComponent } from './upload-image-input/upload-image-inp
     NzIconModule,
     NzUploadModule,
     NzSpinModule,
+    NzCheckboxModule,
     FormsModule,
   ]
 })
