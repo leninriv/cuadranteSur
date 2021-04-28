@@ -31,7 +31,8 @@ export class DateInputComponent implements OnInit {
 
   onChangeValue(text: any) {
     const field = toSnakeCase(this.label);
-    this.onChangeForm.emit({ field, value: text });
+    const value = text ? new Date(text).toLocaleDateString("en-US") : null
+    this.onChangeForm.emit({ field, value });
   }
 
 }

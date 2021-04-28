@@ -1,0 +1,31 @@
+h1{
+    text-align: center;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 30px;
+}
+
+.view_content_body{
+    width: 100%;
+    padding: 30px 5px;
+    height: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.colum_padding{
+padding: 0px 10px;
+}
+
+.center_content{
+    text-align: center;
+}
+
+.view_content_field--space{
+    height: 10px;
+}

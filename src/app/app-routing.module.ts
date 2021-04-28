@@ -19,6 +19,10 @@ const routes: Routes = [
   {
     path: 'loading',
     loadChildren: () => import('./loading/loading.module').then(m => m.LoadingModule)
+  },
+  {
+    path: 'record-view',
+    loadChildren: () => import('./view/view.module').then(m => m.ViewModule)
   }
 
 ];

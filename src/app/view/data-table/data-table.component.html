@@ -1,0 +1,16 @@
+<h2>{{title}}</h2>
+<nz-table #basicTable [nzData]="listOfData" [nzFrontPagination]="false">
+    <thead>
+      <tr>
+        <th *ngFor="let field of tableFields">{{field}}</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="listOfData?.length">
+      <tr *ngFor="let data of basicTable.data">
+        <td *ngFor="let field of fieldsInSnakeCase" >{{ data[field] }}</td>
+      </tr>
+    </tbody>
+    <div *ngIf="!register">
+      No reistra
+    </div>
+  </nz-table>
