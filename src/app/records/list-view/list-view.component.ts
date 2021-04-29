@@ -38,6 +38,11 @@ export class ListViewComponent implements OnInit {
     this.router.navigate(['/', 'app', 'form', 'questionary', { id }]);
   }
 
+  navigateToView(id: any) {
+    const url = this.router.serializeUrl(this.router.createUrlTree(['/record-view'], { queryParams: { id } }));
+    window.open(url, '_blank');
+  }
+
   edit(item: any): void {
     this.msg.success(item.email);
   }

@@ -9,6 +9,8 @@
             </div>
             <div nz-col class="colum_padding" nzSpan="16">
                 <nz-card>
+                    <app-field-value [field]="'Datos personales'" [value]="' '"></app-field-value>
+                    <div class="view_content_field--space"></div>
                     <app-field-value [field]="'Apellidos'" [value]="record.apellidos"></app-field-value>
                     <app-field-value [field]="'Nombres'" [value]="record.nombres"></app-field-value>
                     <app-field-value [field]="'Cédula'" [value]="record.cedula_de_identidad"></app-field-value>
@@ -26,7 +28,7 @@
                     <app-field-value [field]="'Elecciones 2021'" [value]="' '"></app-field-value>
                     <div class="view_content_field--space"></div>
                     <app-field-value [field]="'Provincia'" [value]="record.provincia"></app-field-value>
-                    <app-field-value [field]="'Circunscripcion'" [value]="record.circunscripcion"></app-field-value>
+                    <app-field-value [field]="'Circunscripción'" [value]="record.circunscripcion"></app-field-value>
                     <app-field-value [field]="'Partido'" [value]="record.partido_o_alianza"></app-field-value>
                     <app-field-value [field]="'Alterno a'" [value]="record.alterno_a"></app-field-value>
                 </nz-card>
@@ -157,6 +159,33 @@
             </div>
         </div>
 
+        <br />
+        <div nz-row>
+            <div nz-col class="colum_padding" nzSpan="12">
+                <nz-card>
+                    <app-field-value [field]="'Redes sociales'" [value]="' '"></app-field-value>
+                    <div class="view_content_field--space"></div>
+                    <app-field-value [field]="'Página web'" [value]="record.pagina_web"></app-field-value>
+                    <app-field-value [field]="'Facebook'" [value]="record.facebook"></app-field-value>
+                    <app-field-value [field]="'Twitter'" [value]="record.twitter"></app-field-value>
+                    <app-field-value [field]="'Instagram'" [value]="record.instagram"></app-field-value>
+                    <app-field-value [field]="'LinkedIn'" [value]="record.linked_in"></app-field-value>
+                    <app-field-value [field]="'Otras'" [value]="record.otras"></app-field-value>
+                </nz-card>
+            </div>
+            <div nz-col class="colum_padding" nzSpan="12">
+                <nz-card>
+                    <app-field-value [field]="'Datos adicionales'" [value]="' '"></app-field-value>
+                    <div class="view_content_field--space"></div>
+                    <app-field-value [field]="'Información adicional'" [value]="record.informacion_adicional"></app-field-value>
+                    <app-field-value [field]="'Idea fuerza de campaña'" [value]="record.idea_fuerza_de_campana"></app-field-value>
+                    <app-field-value [field]="'Criterio de informante calificado'" [value]="record.criterio_de_informante_calificado"></app-field-value>
+                    <app-field-value [field]="'Observaciones'" [value]="record.observaciones"></app-field-value>
+                    <app-field-value [field]="'Anexos'" [value]="record.anexos"></app-field-value>
+                </nz-card>
+            </div>
+        </div>
+
     </div>
-    <button *ngIf="record" nz-button nzType="primary" (click)="generatePdf()">Generar pdf</button>
+    <button *ngIf="record && showButton" nz-button nzType="primary" (click)="generatePdf()">Generar pdf</button>
 </div>

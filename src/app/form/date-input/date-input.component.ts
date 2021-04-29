@@ -25,13 +25,23 @@ export class DateInputComponent implements OnInit {
   validateInitValue() {
     const field = toSnakeCase(this.label);
     if (this.form && this.form[field]) {
-      this.value = this.form[field];
+      if (this.mode === 'year') {
+        const yearSelected = new Date();
+        yearSelected.setFullYear(~~this.form[field]);
+        this.value = yearSelected;
+      } else {
+        this.value = this.form[field];
+      }
+
     }
   }
 
   onChangeValue(text: any) {
     const field = toSnakeCase(this.label);
-    const value = text ? new Date(text).toLocaleDateString("en-US") : null
+    let value: any = text ? new Date(text).toLocaleDateString("en-US") : null
+    if (this.mode === 'year' && value) {
+      value = new Date(value).getFullYear();
+    }
     this.onChangeForm.emit({ field, value });
   }
 

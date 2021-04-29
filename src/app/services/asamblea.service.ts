@@ -31,10 +31,17 @@ export class AsambleaService {
     }
 
     async getItemById(id: any) {
-        if (!this.list?.length) {
-            await this.getRemoteReports();
+        try {
+            if (!this.list?.length) {
+                const item = await this.db.collection(this.collectionName).doc(id).get().toPromise();
+                if (item) {
+                    return [item.data()];
+                }
+            }
+            return this.list.filter(item => item.id === id);
+        } catch (error) {
+            return [];
         }
-        return this.list.filter(item => item.id === id);
     }
 
     async updateReport(itemId: string, report: any) {

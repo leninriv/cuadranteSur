@@ -17,7 +17,7 @@
           {{item.observaciones}}
           <ul nz-list-item-actions>
             <nz-list-item-action><a (click)="navigateToEdit(item.id)">Editar</a></nz-list-item-action>
-            <nz-list-item-action><a (click)="edit(item)">Ver</a></nz-list-item-action>
+            <nz-list-item-action><a (click)="navigateToView(item.id)">Ver</a></nz-list-item-action>
           </ul>
         </ng-container>
         <nz-skeleton *ngIf="item.loading" [nzAvatar]="true" [nzActive]="true" [nzTitle]="false" [nzLoading]="true">

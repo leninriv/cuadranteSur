@@ -36,7 +36,7 @@ export class GridContentComponent implements OnInit {
   regisetrBlock9 = false;
   regisetrBlock10 = false;
 
-  constructor(private asambleaService: AsambleaService, private router: Router, private _route: ActivatedRoute,) {
+  constructor(private asambleaService: AsambleaService, private router: Router, private _route: ActivatedRoute) {
     this.form = {};
   }
 

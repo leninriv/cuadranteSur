@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AsambleaService } from 'src/app/services/asamblea.service';
+import { ActivatedRoute } from '@angular/router';
 import { cloneDeep } from 'src/utilities/global';
 
 @Component({
@@ -9,29 +10,48 @@ import { cloneDeep } from 'src/utilities/global';
 })
 export class RecordScreenComponent implements OnInit {
   record: any = null;
-  constructor(private asambleaService: AsambleaService) { }
+  showButton = true;
+  recordId: any = null;
+  constructor(private asambleaService: AsambleaService, private _route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.loadFormData();
+    this.detectRouteParams();
   }
 
-  async loadFormData() {
+  detectRouteParams() {
+    this._route.queryParams.subscribe(params => {
+      if (params['id']) {
+        this.loadFormData(params['id']);
+      }
+    })
+  }
+
+
+  async loadFormData(id: any) {
     // Todo:load id from route
-    const records = await this.asambleaService.getItemById('RQxeNQnW1MXf58JrB8Fz');
-    if (records && records[0]) {
-      console.log('records',records)
+    const records = await this.asambleaService.getItemById(id);
+    if (records && records[0] && records[0].cedula_de_identidad) {
       this.record = cloneDeep(records[0]);
     }
   }
 
 
-  generatePdf() {
-    console.log('lenin');
-    window.print()
 
-    window.addEventListener("afterprint", function (event) {
-      console.log('lenin2', event);
-    });
+  generatePdf() {
+    this.showButton = false;
+    setTimeout(() => {
+      window.print();
+    }, 500);
+
+
+    setTimeout(() => {
+      this.showButton = true;
+    }, 5000);
+
+
+    // window.addEventListener("afterprint", function (event) {
+    //   console.log('lenin2', event);
+    // });
   }
 
 }
