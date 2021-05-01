@@ -1,6 +1,13 @@
 <div nz-row>
-  <div nz-col nzSpan="24" class="grid-content-container">
-    <p>List</p>
+  <div nz-col nzSpan="12" class="grid-content-container">
+  </div>
+  <div nz-col nzSpan="12" class="grid-content-container">
+    <nz-input-group [nzSuffix]="suffixIconSearch" [nzSize]="'large'">
+      <input type="text" nz-input placeholder="Busqueda por nombre o apellido" [nzSize]="'large'" [(ngModel)]="queryText"  (ngModelChange)='changeSearch($event)' />
+    </nz-input-group>
+    <ng-template #suffixIconSearch>
+      <i nz-icon nzType="search"></i>
+    </ng-template>
   </div>
 </div>
 
@@ -25,5 +32,11 @@
       </nz-list-item>
       <nz-empty *ngIf="!list?.length"></nz-empty>
     </nz-list>
+  </div>
+</div>
+
+<div *ngIf="list?.length" nz-row>
+  <div nz-col nzSpan="12" class="grid-content-container">
+    <button nz-button nzType="primary" (click)="jsonToExcel()">Generar Base de datos .xls</button>
   </div>
 </div>

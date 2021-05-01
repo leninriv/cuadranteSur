@@ -30,15 +30,15 @@
                 <div nz-row>
                     <div nz-col nzSpan="8" style="padding-right: 5px;">
                         <app-select-input label="Provincia" (onChangeForm)="onChangeForm($event)" [form]="form"
-                            [options]="['Ecuador', 'Otro']"></app-select-input>
+                            [options]="provincias"></app-select-input>
                     </div>
                     <div nz-col nzSpan="8" style="padding-right: 5px;">
                         <app-select-input label="Circunscripción" (onChangeForm)="onChangeForm($event)" [form]="form"
-                            [options]="['Ecuador', 'Otro']"></app-select-input>
+                            [options]="circunscripciones"></app-select-input>
                     </div>
                     <div nz-col nzSpan="8" style="padding-left: 5px;">
                         <app-select-input label="Partido o alianza" (onChangeForm)="onChangeForm($event)" [form]="form"
-                            [options]="['PSC', 'Creo', 'Otro']"></app-select-input>
+                            [options]="partidos"></app-select-input>
                     </div>
                 </div>
                 <app-text-input label="Alterno/a" (onChangeForm)="onChangeForm($event)" [form]="form"> </app-text-input>

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AsambleaService } from 'src/app/services/asamblea.service';
+import { OptionsListService } from 'src/app/services/options-list.service';
 import { cloneDeep } from 'src/utilities/global';
 
 @Component({
@@ -36,8 +37,15 @@ export class GridContentComponent implements OnInit {
   regisetrBlock9 = false;
   regisetrBlock10 = false;
 
-  constructor(private asambleaService: AsambleaService, private router: Router, private _route: ActivatedRoute) {
+  provincias: any[] = [];
+  circunscripciones: any[] = [];
+  partidos: any[] = [];
+
+  constructor(private asambleaService: AsambleaService, private router: Router, private _route: ActivatedRoute, private optionsListService: OptionsListService) {
     this.form = {};
+    this.provincias = this.optionsListService.getTerritorios();
+    this.circunscripciones= this.optionsListService.getCircunscripciones();
+    this.partidos= this.optionsListService.getPartidos();
   }
 
   ngOnInit(): void {

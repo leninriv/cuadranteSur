@@ -29,6 +29,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AuthService } from './services/auth.service';
 import { AsambleaService } from './services/asamblea.service';
 import { UploadService } from './services/upload.service';
+import { OptionsListService } from './services/options-list.service';
+import { ExcelService } from './services/excel.service';
 
 
 registerLocaleData(en);
@@ -53,6 +55,8 @@ registerLocaleData(en);
     AuthService,
     AsambleaService,
     UploadService,
+    OptionsListService,
+    ExcelService,
     { provide: NZ_I18N, useValue: en_US }
   ],
   bootstrap: [AppComponent]

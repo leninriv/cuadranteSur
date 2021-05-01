@@ -35,8 +35,6 @@ export class RecordScreenComponent implements OnInit {
     }
   }
 
-
-
   generatePdf() {
     this.showButton = false;
     setTimeout(() => {
