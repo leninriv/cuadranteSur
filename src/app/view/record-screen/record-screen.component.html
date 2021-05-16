@@ -3,8 +3,7 @@
         <h1>Asamblea Nacional del Ecuador 2021-2025</h1>
         <div nz-row>
             <div nz-col class="colum_padding center_content" nzSpan="8">
-                <nz-avatar nzIcon="user" [nzSize]="200"
-                    [nzSrc]="record.imagen_de_perfil">
+                <nz-avatar nzIcon="user" [nzSize]="200" [nzSrc]="record.imagen_de_perfil">
                 </nz-avatar>
             </div>
             <div nz-col class="colum_padding" nzSpan="16">
@@ -14,8 +13,10 @@
                     <app-field-value [field]="'Apellidos'" [value]="record.apellidos"></app-field-value>
                     <app-field-value [field]="'Nombres'" [value]="record.nombres"></app-field-value>
                     <app-field-value [field]="'Cédula'" [value]="record.cedula_de_identidad"></app-field-value>
-                    <app-field-value [field]="'Fecha de nacimiento'" [value]="record.fecha_de_nacimiento"></app-field-value>
-                    <app-field-value [field]="'Edad al momento de elección'" [value]="changeAgeElection(record.edad_al_momento_de_eleccion)"></app-field-value>
+                    <app-field-value [field]="'Fecha de nacimiento'" [value]="record.fecha_de_nacimiento">
+                    </app-field-value>
+                    <app-field-value [field]="'Edad al momento de elección'"
+                        [value]="changeAgeElection(record.edad_al_momento_de_eleccion)"></app-field-value>
                     <app-field-value [field]="'Sexo'" [value]="record.sexo"></app-field-value>
                 </nz-card>
             </div>
@@ -46,11 +47,8 @@
         <br />
         <div nz-row>
             <div nz-col class="colum_padding" nzSpan="24">
-                <app-data-table 
-                title="Asesores" 
-                blockname="advisers"
-                [form]="record"
-                [tableFields]="['Nombre','Contacto']">
+                <app-data-table title="Asesores" blockname="advisers" [form]="record"
+                    [tableFields]="['Nombre','Contacto']">
                 </app-data-table>
             </div>
         </div>
@@ -58,12 +56,9 @@
         <br />
         <div nz-row>
             <div nz-col class="colum_padding" nzSpan="24">
-                <app-data-table 
-                title="Registro de formación académica (Senescyt)" 
-                blockname="academy"
-                [form]="record"
-                [tableTitles]="['Título','Instituto de Educación Superior','Número de registro']"
-                [tableFields]="['Título','IES','Registro']">
+                <app-data-table title="Registro de formación académica (Senescyt)" blockname="academy" [form]="record"
+                    [tableTitles]="['Título','Instituto de Educación Superior','Número de registro']"
+                    [tableFields]="['Título','IES','Registro']">
                 </app-data-table>
             </div>
         </div>
@@ -71,11 +66,9 @@
         <br />
         <div nz-row>
             <div nz-col class="colum_padding" nzSpan="24">
-                <app-data-table 
-                title="Registros de partcipación electoral previa" 
-                blockname="previous_elections"
-                [form]="record"
-                [tableFields]="['Cargo','Circunscripción','Organización política','Año','Situación']">
+                <app-data-table title="Registros de partcipación electoral previa" blockname="previous_elections"
+                    [form]="record"
+                    [tableFields]="['Cargo','Circunscripción','Organización política','Año','Situación']">
                 </app-data-table>
             </div>
         </div>
@@ -83,11 +76,9 @@
         <br />
         <div nz-row>
             <div nz-col class="colum_padding" nzSpan="24">
-                <app-data-table 
-                title="Registros de trayectoria en servicio público (Contraloría General del Estado)" 
-                blockname="trayectory_service"
-                [form]="record"
-                [tableFields]="['Institución','Cargo','Inicio','Fin']">
+                <app-data-table title="Registros de trayectoria en servicio público (Contraloría General del Estado)"
+                    blockname="trayectory_service" [form]="record"
+                    [tableFields]="['Institución','Cargo','Inicio','Fin']">
                 </app-data-table>
             </div>
         </div>
@@ -95,11 +86,9 @@
         <br />
         <div nz-row>
             <div nz-col class="colum_padding" nzSpan="24">
-                <app-data-table 
-                title="Registros de administración en compañías y sociedades" 
-                blockname="companies_societies"
-                [form]="record"
-                [tableFields]="['Nombre','Cargo','Fecha','Objeto social','CIIU','Descripción']">
+                <app-data-table title="Registros de administración en compañías y sociedades"
+                    blockname="companies_societies" [form]="record"
+                    [tableFields]="['Nombre','Cargo','Fecha','Objeto social','CIIU','Descripción']">
                 </app-data-table>
             </div>
         </div>
@@ -107,11 +96,9 @@
         <br />
         <div nz-row>
             <div nz-col class="colum_padding" nzSpan="24">
-                <app-data-table 
-                title="Registros de accionista en compañías y sociedades" 
-                blockname="shareholder_companies_societies"
-                [form]="record"
-                [tableFields]="['Nombre','Capital invertido','Capital total','Situación legal','Objeto social','CIIU','Descripción']">
+                <app-data-table title="Registros de accionista en compañías y sociedades"
+                    blockname="shareholder_companies_societies" [form]="record"
+                    [tableFields]="['Nombre','Capital invertido','Capital total','Situación legal','Objeto social','CIIU','Descripción']">
                 </app-data-table>
             </div>
         </div>
@@ -119,19 +106,13 @@
         <br />
         <div nz-row>
             <div nz-col class="colum_padding" nzSpan="12">
-                <app-data-table 
-                title="Declaración de impuesto a la renta (Servicio de rentas internas)" 
-                blockname="tax_declaration"
-                [form]="record"
-                [tableFields]="['Fecha','Monto']">
+                <app-data-table title="Declaración de impuesto a la renta (Servicio de rentas internas)"
+                    blockname="tax_declaration" [form]="record" [tableFields]="['Fecha','Monto']">
                 </app-data-table>
             </div>
             <div nz-col class="colum_padding" nzSpan="12">
-                <app-data-table 
-                title="Declaración de impuesto a la salidad de divisas (Servicio de rentas internas)" 
-                blockname="taxes_foreign_currency"
-                [form]="record"
-                [tableFields]="['Fecha','Monto']">
+                <app-data-table title="Declaración de impuesto a la salidad de divisas (Servicio de rentas internas)"
+                    blockname="taxes_foreign_currency" [form]="record" [tableFields]="['Fecha','Monto']">
                 </app-data-table>
             </div>
         </div>
@@ -139,11 +120,9 @@
         <br />
         <div nz-row>
             <div nz-col class="colum_padding" nzSpan="24">
-                <app-data-table 
-                title="Registro de procesos judiciales como actor / ofendido (Consejo de la Judicatura)" 
-                blockname="legal_proceedings_actor"
-                [form]="record"
-                [tableFields]="['Fecha de ingreso','Número de proceso','Acción/Infracción','Demandado/Procesado']">
+                <app-data-table title="Registro de procesos judiciales como actor / ofendido (Consejo de la Judicatura)"
+                    blockname="legal_proceedings_actor" [form]="record"
+                    [tableFields]="['Fecha de ingreso','Número de proceso','Acción/Infracción','Demandado/Procesado']">
                 </app-data-table>
             </div>
         </div>
@@ -151,11 +130,10 @@
         <br />
         <div nz-row>
             <div nz-col class="colum_padding" nzSpan="24">
-                <app-data-table 
-                title="Registro de procesos judiciales como demandado / procesado (Consejo de la Judicatura)" 
-                blockname="legal_proceedings_defendant"
-                [form]="record"
-                [tableFields]="['Fecha de ingreso','Número de proceso','Acción/Infracción','Actor/Ofendido']">
+                <app-data-table
+                    title="Registro de procesos judiciales como demandado / procesado (Consejo de la Judicatura)"
+                    blockname="legal_proceedings_defendant" [form]="record"
+                    [tableFields]="['Fecha de ingreso','Número de proceso','Acción/Infracción','Actor/Ofendido']">
                 </app-data-table>
             </div>
         </div>
@@ -163,11 +141,9 @@
         <br />
         <div nz-row>
             <div nz-col class="colum_padding" nzSpan="24">
-                <app-data-table 
-                title="Registro de pensiones alimenticias (Consejo de la Judicatura)" 
-                blockname="alimony_pensions"
-                [form]="record"
-                [tableFields]="['Código de tarjeta','Proceso judicial','Deuda']">
+                <app-data-table title="Registro de pensiones alimenticias (Consejo de la Judicatura)"
+                    blockname="alimony_pensions" [form]="record"
+                    [tableFields]="['Código de tarjeta','Proceso judicial','Deuda']">
                 </app-data-table>
             </div>
         </div>
@@ -178,27 +154,41 @@
                 <nz-card>
                     <app-field-value [field]="'Redes sociales'" [value]="' '"></app-field-value>
                     <div class="view_content_field--space"></div>
-                    <app-field-value [field]="'Página web'" [value]="record.pagina_web"></app-field-value>
-                    <app-field-value [field]="'Facebook'" [value]="record.facebook"></app-field-value>
-                    <app-field-value [field]="'Twitter'" [value]="record.twitter"></app-field-value>
-                    <app-field-value [field]="'Instagram'" [value]="record.instagram"></app-field-value>
-                    <app-field-value [field]="'TikTok'" [value]="record.tik_tok"></app-field-value>
-                    <app-field-value [field]="'LinkedIn'" [value]="record.linked_in"></app-field-value>
-                    <app-field-value [field]="'Otras'" [value]="record.otras"></app-field-value>
+                    <app-field-value [field]="'Página web'" [link]="true" [value]="record.pagina_web"></app-field-value>
+                    <app-field-value [field]="'Facebook'" [link]="true" [value]="record.facebook"></app-field-value>
+                    <app-field-value [field]="'Twitter'" [link]="true" [value]="record.twitter"></app-field-value>
+                    <app-field-value [field]="'Instagram'" [link]="true" [value]="record.instagram"></app-field-value>
+                    <app-field-value [field]="'TikTok'" [link]="true" [value]="record.tik_tok"></app-field-value>
+                    <app-field-value [field]="'LinkedIn'" [link]="true" [value]="record.linked_in"></app-field-value>
+                    <app-field-value [field]="'Otras'" [link]="true" [value]="record.otras"></app-field-value>
                 </nz-card>
             </div>
             <div nz-col class="colum_padding" nzSpan="12">
                 <nz-card>
                     <app-field-value [field]="'Datos adicionales'" [value]="' '"></app-field-value>
                     <div class="view_content_field--space"></div>
-                    <app-field-value [field]="'Información adicional'" [value]="record.informacion_adicional"></app-field-value>
-                    <app-field-value [field]="'Idea fuerza de campaña'" [value]="record.idea_fuerza_de_campana"></app-field-value>
-                    <app-field-value [field]="'Criterio de informante calificado'" [value]="record.criterio_de_informante_calificado"></app-field-value>
+                    <app-field-value [field]="'Información adicional'" [uppercase]="true"
+                        [value]="record.informacion_adicional"></app-field-value>
+                    <app-field-value [field]="'Idea fuerza de campaña'" [uppercase]="true"
+                        [value]="record.idea_fuerza_de_campana"></app-field-value>
+                    <app-field-value [field]="'Criterio de informante calificado'" [uppercase]="true"
+                        [value]="record.criterio_de_informante_calificado"></app-field-value>
                     <app-field-value [field]="'Anexos'" [value]="record.anexos" [link]="true"></app-field-value>
                 </nz-card>
             </div>
         </div>
 
+        <br />
+        <div class="logo_container">
+            <div>Supported by: &nbsp; &nbsp; &nbsp; &nbsp; </div>
+            <div>
+                <h3 class="cuadrante_title">CUADRANTE</h3>
+                <h3 class="cuadrante_title">SUR</h3>
+            </div>
+            <div>
+                <img class="loging-image" src="../../../assets/images/logo_ligth.png">
+            </div>
+        </div>
     </div>
     <button *ngIf="record && showButton" nz-button nzType="primary" (click)="generatePdf()">Generar pdf</button>
 </div>

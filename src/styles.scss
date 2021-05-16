@@ -2,6 +2,11 @@
 @import "~ng-zorro-antd/style/index.min.css"; /* Import basic styles */
 @import "~ng-zorro-antd/button/style/index.min.css"; /* Import styles of the component */
 
+@font-face {
+    font-family: "idilica";
+    src: url(assets/fonts/Idilica.otf) format("truetype");
+  }
+
 /* width */
 ::-webkit-scrollbar {
     width: 7px;

@@ -1,16 +1,24 @@
-.view_content_field--field{
+.view_content_field--field {
     font-size: 16px;
     font-weight: 700;
     display: flex;
 }
 
-.view_content_field--value{
+.view_content_field--value {
     font-size: 16px;
     color: grey;
     padding-left: 5px;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: row;
+}
+
+.view_content_field--link {
+    color: royalblue;
+}
+
+.view_content_field--uppercase {
+    text-transform: uppercase;
 }

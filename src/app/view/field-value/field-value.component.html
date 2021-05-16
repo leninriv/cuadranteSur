@@ -1,3 +1,6 @@
 <div class="container">
-    <div class="view_content_field--field">{{field}}:</div><div class="view_content_field--value"> {{value}}</div>
+    <div class="view_content_field--field">{{field}}:</div>
+    <a *ngIf="(link && validateLink(value));else other_content" class="view_content_field--value view_content_field--link" href="{{value}}"> CLICK AQUI</a>
+    <ng-template #other_content> <div *ngIf="!link" [ngClass]="{'view_content_field--uppercase' : uppercase}" class="view_content_field--value"> {{value}}</div></ng-template>
+   
 </div>

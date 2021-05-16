@@ -74,7 +74,7 @@ export class ListViewComponent implements OnInit {
   }
 
   jsonToExcel() {
-    const allBlocks = ['academy', 'previous_elections', 'trayectory_service', 'companies_societies', 'shareholder_companies_societies', 'tax_declaration', 'taxes_foreign_currency', 'legal_proceedings_actor', 'legal_proceedings_defendant', 'alimony_pensions'];
+    const allBlocks = ['academy', 'previous_elections', 'trayectory_service', 'companies_societies', 'shareholder_companies_societies', 'tax_declaration', 'taxes_foreign_currency', 'legal_proceedings_actor', 'legal_proceedings_defendant', 'alimony_pensions', 'advisers'];
     const allList = cloneDeep(this.list);
     const newObjectList: any = {};
     newObjectList.general = [];

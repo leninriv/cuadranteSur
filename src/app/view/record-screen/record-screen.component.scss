@@ -1,8 +1,8 @@
-h1{
+h1 {
     text-align: center;
 }
 
-.content{
+.content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +10,7 @@ h1{
     padding-bottom: 30px;
 }
 
-.view_content_body{
+.view_content_body {
     width: 100%;
     padding: 30px 5px;
     height: 100%;
@@ -18,14 +18,36 @@ h1{
     padding-bottom: 30px;
 }
 
-.colum_padding{
-padding: 0px 10px;
+.colum_padding {
+    padding: 0px 10px;
 }
 
-.center_content{
+.center_content {
     text-align: center;
 }
 
-.view_content_field--space{
+.view_content_field--space {
     height: 10px;
+}
+
+.loging-image {
+    width: 60px;
+    height: 60px;
+}
+
+.logo_container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.cuadrante_title {
+    font-family: idilica;
+    margin: 0px;
+    font-size: 18px;
+    text-align: end;
+    padding-right: 3px;
+    line-height: 18px;
 }

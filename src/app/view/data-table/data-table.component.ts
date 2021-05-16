@@ -24,10 +24,11 @@ export class DataTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.buildFields();
     this.buildDataList()
   }
 
-  ngAfterViewInit(): void {
+  buildFields(): void {
     if (!this.tableTitles?.length) {
       this.tableTitles = [...this.tableFields];
     }
