@@ -88,6 +88,7 @@ export class OptionsListService {
       'MUPP/Construye-Renace la Esperanza (alianza Movimiento de Unidad Plurinacional Pachakutik/Construye)',
       'MUPP/UP-Minka por la Vida (Movimiento de Unidad Plurinacional Pachakutik/Unidad Popular)',
       'UP/MUPP-Minka por la Vida (Unidad Popular/Movimiento de Unidad Plurinacional Pachakutik)',
+      'MUPP/UP-Alianza por la Dignidad de Zamora Chinchipe (Movimiento de Unidad Plurinacional Pachakutik/Unidad Popular)'
     ]
   }
 

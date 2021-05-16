@@ -1,0 +1,9 @@
+<div nz-row>
+    <div nz-col nzSpan="12" style="padding-right: 5px;">
+        <app-text-input label="Nombre" [placeholder]="'Asesor '+ (index+1)" (onChangeForm)="onChangeValue($event)" [form]="form">
+        </app-text-input>
+    </div>
+    <div nz-col nzSpan="12" style="padding-right: 5px;">
+        <app-text-input label="Contacto" (onChangeForm)="onChangeValue($event)" [form]="form"></app-text-input>
+    </div>
+</div>

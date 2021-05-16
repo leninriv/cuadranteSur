@@ -2,7 +2,7 @@
 <nz-table #basicTable [nzData]="listOfData" [nzFrontPagination]="false">
     <thead>
       <tr>
-        <th *ngFor="let field of tableFields">{{field}}</th>
+        <th *ngFor="let field of tableTitles">{{field}}</th>
       </tr>
     </thead>
     <tbody *ngIf="listOfData?.length">
@@ -11,6 +11,6 @@
       </tr>
     </tbody>
     <div *ngIf="!register">
-      No reistra
+      No registra
     </div>
   </nz-table>

@@ -25,6 +25,7 @@ export class GridContentComponent implements OnInit {
   arrayBlock8 = [0]; // Legal proceedings actor
   arrayBlock9 = [0]; // Legal proceedings defendant
   arrayBlock10 = [0]; // Alimony pensions
+  arrayBlock11 = [0,1]; // asesores
 
   regisetrBlock1 = false;
   regisetrBlock2 = false;
@@ -36,6 +37,7 @@ export class GridContentComponent implements OnInit {
   regisetrBlock8 = false;
   regisetrBlock9 = false;
   regisetrBlock10 = false;
+  regisetrBlock11 = false;
 
   provincias: any[] = [];
   circunscripciones: any[] = [];

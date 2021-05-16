@@ -32,9 +32,10 @@ import { LegalProceedingsComponent } from './legal-proceedings/legal-proceedings
 import { AlimonyPensionsComponent } from './alimony-pensions/alimony-pensions.component';
 import { TextAreaComponent } from './text-area/text-area.component';
 import { UploadImageInputComponent } from './upload-image-input/upload-image-input.component';
+import { AdvisersBlockComponent } from './advisers-block/advisers-block.component';
 
 @NgModule({
-  declarations: [GridContentComponent, QuestionBlockComponent, InputFieldComponent, TextInputComponent, DateInputComponent, RadioInputComponent, SelectInputComponent, AcademyBlockComponent, PreviousElectionsBlockComponent, TrayectoryServiceComponent, CompaniesSocietiesComponent, ShareholderCompaniesSocietiesComponent, YearValueComponent, LegalProceedingsComponent, AlimonyPensionsComponent, TextAreaComponent, UploadImageInputComponent],
+  declarations: [GridContentComponent, QuestionBlockComponent, InputFieldComponent, TextInputComponent, DateInputComponent, RadioInputComponent, SelectInputComponent, AcademyBlockComponent, PreviousElectionsBlockComponent, TrayectoryServiceComponent, CompaniesSocietiesComponent, ShareholderCompaniesSocietiesComponent, YearValueComponent, LegalProceedingsComponent, AlimonyPensionsComponent, TextAreaComponent, UploadImageInputComponent, AdvisersBlockComponent],
   imports: [
     CommonModule,
     FormRoutingModule,

@@ -26,6 +26,18 @@ export class RecordScreenComponent implements OnInit {
     })
   }
 
+  changeAgeElection(ageNumber: string) {
+    try {
+      const parseDate = ageNumber.split(',')
+      const decimals = parseFloat(parseDate[1])
+      const meses = parseFloat(`0.${decimals}`) * 12;
+      return `${parseDate[0]} años, ${meses.toFixed(0)} meses`
+    } catch (error) {
+
+    }
+    return ageNumber
+  }
+
 
   async loadFormData(id: any) {
     // Todo:load id from route

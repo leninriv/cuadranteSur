@@ -18,7 +18,7 @@
         <ng-container *ngIf="!item.loading">
           <nz-list-item-meta [nzAvatar]="item.imagen_de_perfil" [nzDescription]="item.nombres + ' ' + item.apellidos">
             <nz-list-item-meta-title>
-              <a href="https://ng.ant.design">{{ item.partido_o_alianza }}</a>
+              <a (click)="navigateToView(item.id)">{{ item.partido_o_alianza }}</a>
             </nz-list-item-meta-title>
           </nz-list-item-meta>
           {{item.observaciones}}

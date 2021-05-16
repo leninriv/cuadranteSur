@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class FieldValueComponent implements OnInit {
   @Input() field?: string;
   @Input() value?: string;
+  @Input() link?: boolean;
 
   constructor() { }
 

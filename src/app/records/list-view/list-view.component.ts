@@ -66,7 +66,7 @@ export class ListViewComponent implements OnInit {
   changeSearch(query: any) {
     if (query && query.length) {
       const completeList = this.asambleaService.getList();
-      const filteredList = completeList.filter(item => item.nombres.includes(query) || item.apellidos.includes(query));
+      const filteredList = completeList.filter(item => item?.nombres?.includes(query) || item?.apellidos?.includes(query));
       this.list = filteredList;
     } else {
       this.list = this.asambleaService.getList();

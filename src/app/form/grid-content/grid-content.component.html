@@ -56,6 +56,18 @@
 
     <div nz-row>
         <div nz-col nzSpan="24" class="grid-content-container">
+            <app-question-block blockTitle="Asesores">
+                <div *ngIf="!regisetrBlock11">
+                    <app-advisers-block *ngFor="let option of arrayBlock11" (onChangeForm)="onChangeFormBlock($event)"
+                        [index]="option" blockname="advisers" [initialForm]="form"></app-advisers-block>
+                </div>
+                <br />
+            </app-question-block>
+        </div>
+    </div>
+
+    <div nz-row>
+        <div nz-col nzSpan="24" class="grid-content-container">
             <app-question-block blockTitle="Formación académica">
                 <label nz-checkbox [(ngModel)]="regisetrBlock1" (ngModelChange)="onChangeRegister($event,'academy')">No registra</label>
                 <br /><br />
@@ -225,6 +237,7 @@
                 <app-text-input [form]="form" label="Facebook" (onChangeForm)="onChangeForm($event)"> </app-text-input>
                 <app-text-input [form]="form" label="Twitter" (onChangeForm)="onChangeForm($event)"> </app-text-input>
                 <app-text-input [form]="form" label="Instagram" (onChangeForm)="onChangeForm($event)"> </app-text-input>
+                <app-text-input [form]="form" label="TikTok" (onChangeForm)="onChangeForm($event)"> </app-text-input>
                 <app-text-input [form]="form" label="LinkedIn" (onChangeForm)="onChangeForm($event)"> </app-text-input>
                 <app-text-input [form]="form" label="Otras" (onChangeForm)="onChangeForm($event)"> </app-text-input>
             </app-question-block>

@@ -10,6 +10,7 @@ export class DataTableComponent implements OnInit {
   @Input() title?: string;
   @Input() blockname: string;
   @Input() tableFields: Array<string>;
+  @Input() tableTitles: Array<string>;
   @Input() form?: any;
   register = true;
   fieldsInSnakeCase: any[] = [];
@@ -19,10 +20,17 @@ export class DataTableComponent implements OnInit {
   constructor() {
     this.blockname = 'block';
     this.tableFields = [];
+    this.tableTitles = [];
   }
 
   ngOnInit(): void {
     this.buildDataList()
+  }
+
+  ngAfterViewInit(): void {
+    if (!this.tableTitles?.length) {
+      this.tableTitles = [...this.tableFields];
+    }
   }
 
   buildDataList() {
