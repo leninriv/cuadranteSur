@@ -31,7 +31,7 @@ export class RecordScreenComponent implements OnInit {
       const parseDate = ageNumber.split(',')
       const decimals = parseFloat(parseDate[1])
       const meses = parseFloat(`0.${decimals}`) * 12;
-      return `${parseDate[0]} años, ${meses.toFixed(0)} meses`
+      return `${parseDate[0]} AÑOS, ${meses.toFixed(0)} MESES`
     } catch (error) {
 
     }

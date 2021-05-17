@@ -7,10 +7,10 @@
     </thead>
     <tbody *ngIf="listOfData?.length">
       <tr *ngFor="let data of basicTable.data">
-        <td *ngFor="let field of fieldsInSnakeCase" >{{ data[field] }}</td>
+        <td class="field--uppercase" *ngFor="let field of fieldsInSnakeCase" >{{ data[field] }}</td>
       </tr>
     </tbody>
-    <div *ngIf="!register">
+    <div  class="field--uppercase" *ngIf="!register">
       No registra
     </div>
   </nz-table>
