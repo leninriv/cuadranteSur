@@ -66,7 +66,7 @@
         <br />
         <div nz-row>
             <div nz-col class="colum_padding" nzSpan="24">
-                <app-data-table title="Registros de partcipación electoral previa" blockname="previous_elections"
+                <app-data-table title="Registros de participación electoral previa (Consejo Nacional Electoral)" blockname="previous_elections"
                     [form]="record"
                     [tableFields]="['Cargo','Circunscripción','Organización política','Año','Situación']">
                 </app-data-table>
@@ -86,7 +86,7 @@
         <br />
         <div nz-row>
             <div nz-col class="colum_padding" nzSpan="24">
-                <app-data-table title="Registros de administración en compañías y sociedades"
+                <app-data-table title="Registros de administración en compañías y sociedades (Superintendencia de Compañías)"
                     blockname="companies_societies" [form]="record"
                     [tableFields]="['Nombre','Cargo','Fecha','Objeto social','CIIU','Descripción']">
                 </app-data-table>
@@ -96,7 +96,7 @@
         <br />
         <div nz-row>
             <div nz-col class="colum_padding" nzSpan="24">
-                <app-data-table title="Registros de accionista en compañías y sociedades"
+                <app-data-table title="Registros de accionista en compañías y sociedades (Superintendencia de Compañías)"
                     blockname="shareholder_companies_societies" [form]="record"
                     [tableFields]="['Nombre','Capital invertido','Capital total','Situación legal','Objeto social','CIIU','Descripción']">
                 </app-data-table>
@@ -106,12 +106,12 @@
         <br />
         <div nz-row>
             <div nz-col class="colum_padding" nzSpan="12">
-                <app-data-table title="Declaración de impuesto a la renta (Servicio de rentas internas)"
+                <app-data-table title="Declaración de impuesto a la renta (Servicio de Rentas Internas)"
                     blockname="tax_declaration" [form]="record" [tableFields]="['Fecha','Monto']">
                 </app-data-table>
             </div>
             <div nz-col class="colum_padding" nzSpan="12">
-                <app-data-table title="Declaración de impuesto a la salidad de divisas (Servicio de rentas internas)"
+                <app-data-table title="Declaración de impuesto a la salidad de divisas (Servicio de Rentas Internas)"
                     blockname="taxes_foreign_currency" [form]="record" [tableFields]="['Fecha','Monto']">
                 </app-data-table>
             </div>
