@@ -12,13 +12,15 @@ import { ViewRoutingModule } from './view-routing.module';
 import { RecordScreenComponent } from './record-screen/record-screen.component';
 import { DataTableComponent } from './data-table/data-table.component';
 import { FieldValueComponent } from './field-value/field-value.component';
+import { MinistryViewComponent } from './ministry-view/ministry-view.component';
 
 
 @NgModule({
   declarations: [
     RecordScreenComponent,
     DataTableComponent,
-    FieldValueComponent
+    FieldValueComponent,
+    MinistryViewComponent
   ],
   imports: [
     CommonModule,

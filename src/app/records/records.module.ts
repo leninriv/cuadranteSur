@@ -13,11 +13,13 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { FormsModule } from '@angular/forms'
 import { RecordsRoutingModule } from './records-routing.module';
 import { ListViewComponent } from './list-view/list-view.component';
+import { MinistryListComponent } from './ministry-list/ministry-list.component';
 
 
 @NgModule({
   declarations: [
-    ListViewComponent
+    ListViewComponent,
+    MinistryListComponent
   ],
   imports: [
     CommonModule,

@@ -5,24 +5,45 @@
                 <img class="logo-image" src="../../assets/images/logo.png">
             </div>
             <ul nz-menu nzTheme="dark" nzMode="inline">
+
                 <li nz-menu-item>
                     <a>
                         <i nz-icon nzType="user"></i>
                         <span>Mi Perfil</span>
                     </a>
                 </li>
-                <li nz-menu-item nzMatchRouter>
-                    <a [routerLink]="['/', 'app', 'form', 'questionary']" >
-                        <i nz-icon nzType="file"></i>
-                        <span>Formulario</span>
-                    </a>
+
+                <li nz-submenu nzTitle="Asamblea" nzIcon="dashboard">
+                    <ul>
+                        <li nz-menu-item  [routerLink]="['/', 'app', 'form', 'questionary']">
+                            <i nz-icon nzType="file"></i>
+                            <span>Formulario</span>
+                        </li>
+
+                        <li nz-menu-item [routerLink]="['/', 'app', 'records', 'list']">
+                            <i nz-icon nzType="search"></i>
+                            <span>Registros</span>
+                        </li>
+
+                    </ul>
                 </li>
-                <li nz-menu-item nzMatchRouter>
-                    <a [routerLink]="['/', 'app', 'records', 'list']">
-                        <i nz-icon nzType="search"></i>
-                        <span>Registros</span>
-                    </a>
+
+                <li nz-submenu nzTitle="Ministerio" nzIcon="build">
+                    <ul>
+                        <li nz-menu-item  [routerLink]="['/', 'app', 'form', 'ministry-form']">
+                            <i nz-icon nzType="file"></i>
+                            <span>Formulario</span>
+                        </li>
+
+                        <li nz-menu-item [routerLink]="['/', 'app', 'records', 'ministry-list']">
+                            <i nz-icon nzType="search"></i>
+                            <span>Registros</span>
+                        </li>
+
+                    </ul>
                 </li>
+
+
             </ul>
         </nz-sider>
         <nz-layout>

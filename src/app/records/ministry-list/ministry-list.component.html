@@ -1,0 +1,42 @@
+<div nz-row>
+  <div nz-col nzSpan="12" class="grid-content-container">
+  </div>
+  <div nz-col nzSpan="12" class="grid-content-container">
+    <nz-input-group [nzSuffix]="suffixIconSearch" [nzSize]="'large'">
+      <input type="text" nz-input placeholder="Busqueda por nombre o apellido" [nzSize]="'large'" [(ngModel)]="queryText"  (ngModelChange)='changeSearch($event)' />
+    </nz-input-group>
+    <ng-template #suffixIconSearch>
+      <i nz-icon nzType="search"></i>
+    </ng-template>
+  </div>
+</div>
+
+<div nz-row>
+  <div nz-col nzSpan="24" class="grid-content-container">
+    <nz-list class="demo-loadmore-list" [nzLoading]="initLoading">
+      <nz-list-item *ngFor="let item of list">
+        <ng-container *ngIf="!item.loading">
+          <nz-list-item-meta [nzAvatar]="item.imagen_de_perfil" [nzDescription]="item.nombres + ' ' + item.apellidos">
+            <nz-list-item-meta-title>
+              <a (click)="navigateToView(item.id)">{{ item.informacion_adicional }}</a>
+            </nz-list-item-meta-title>
+          </nz-list-item-meta>
+          {{item.observaciones}}
+          <ul nz-list-item-actions>
+            <nz-list-item-action><a (click)="navigateToEdit(item.id)">Editar</a></nz-list-item-action>
+            <nz-list-item-action><a (click)="navigateToView(item.id)">Ver</a></nz-list-item-action>
+          </ul>
+        </ng-container>
+        <nz-skeleton *ngIf="item.loading" [nzAvatar]="true" [nzActive]="true" [nzTitle]="false" [nzLoading]="true">
+        </nz-skeleton>
+      </nz-list-item>
+      <nz-empty *ngIf="!list?.length"></nz-empty>
+    </nz-list>
+  </div>
+</div>
+
+<!-- <div *ngIf="list?.length" nz-row>
+  <div nz-col nzSpan="12" class="grid-content-container">
+    <button nz-button nzType="primary" (click)="jsonToExcel()">Generar Base de datos .xls</button>
+  </div>
+</div> -->

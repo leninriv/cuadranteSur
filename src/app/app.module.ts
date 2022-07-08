@@ -31,13 +31,14 @@ import { AsambleaService } from './services/asamblea.service';
 import { UploadService } from './services/upload.service';
 import { OptionsListService } from './services/options-list.service';
 import { ExcelService } from './services/excel.service';
+import { MinistryService } from './services/ministry.service';
 
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +55,7 @@ registerLocaleData(en);
   providers: [
     AuthService,
     AsambleaService,
+    MinistryService,
     UploadService,
     OptionsListService,
     ExcelService,
