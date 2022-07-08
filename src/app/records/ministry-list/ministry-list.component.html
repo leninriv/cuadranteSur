@@ -18,7 +18,7 @@
         <ng-container *ngIf="!item.loading">
           <nz-list-item-meta [nzAvatar]="item.imagen_de_perfil" [nzDescription]="item.nombres + ' ' + item.apellidos">
             <nz-list-item-meta-title>
-              <a (click)="navigateToView(item.id)">{{ item.informacion_adicional }}</a>
+              <a (click)="navigateToView(item.id)">{{ item.cargo_designado }}</a>
             </nz-list-item-meta-title>
           </nz-list-item-meta>
           {{item.observaciones}}

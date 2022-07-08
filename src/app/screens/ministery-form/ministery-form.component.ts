@@ -66,7 +66,7 @@ export class MinisteryFormComponent implements OnInit {
 
   validateBlocksArray(form: any) {
     if (typeof form['academy'] !== 'string' && form['academy']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock1, form['academy'].length) } else if (form['academy'] === 'No Registra') { this.regisetrBlock1 = true; };
-    if (typeof form['previous_elections'] !== 'string' && form['previous_elections']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock2, form['previous_elections'].length) } else if (form['previous_elections'] === 'No Registra') { this.regisetrBlock2 = true; };
+    if (typeof form['designation'] !== 'string' && form['designation']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock2, form['designation'].length) } else if (form['designation'] === 'No Registra') { this.regisetrBlock2 = true; };
     if (typeof form['trayectory_service'] !== 'string' && form['trayectory_service']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock3, form['trayectory_service'].length) } else if (form['trayectory_service'] === 'No Registra') { this.regisetrBlock3 = true; };
     if (typeof form['companies_societies'] !== 'string' && form['companies_societies']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock4, form['companies_societies'].length) } else if (form['companies_societies'] === 'No Registra') { this.regisetrBlock4 = true; };
     if (typeof form['shareholder_companies_societies'] !== 'string' && form['shareholder_companies_societies']?.length > 1) { this.addItemsToInitialArray(this.arrayBlock5, form['shareholder_companies_societies'].length) } else if (form['shareholder_companies_societies'] === 'No Registra') { this.regisetrBlock5 = true; };

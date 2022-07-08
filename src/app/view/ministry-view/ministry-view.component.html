@@ -1,6 +1,6 @@
 <div class="content">
   <div class="view_content_body" *ngIf="record">
-      <h1>Asamblea Nacional del Ecuador 2021-2025</h1>
+      <h1>Composición del poder ejecutivo. Gobierno de Guillermo Lasso Mendoza</h1>
       <div nz-row>
           <div nz-col class="colum_padding center_content" nzSpan="8">
               <nz-avatar nzIcon="user" [nzSize]="200" [nzSrc]="record.imagen_de_perfil">
@@ -17,6 +17,9 @@
                   </app-field-value>
                   <app-field-value [field]="'Edad'" [value]="ageCalculation(record.fecha_de_nacimiento)"></app-field-value>
                   <app-field-value [field]="'Sexo'" [uppercase]="true" [value]="record.sexo"></app-field-value>
+
+                  <app-field-value [field]="'Cargo Designado'" [value]="record.cargo_designado"></app-field-value>
+                  <app-field-value [field]="'Fecha de designación'"  [value]="record.fecha_de_designacion"></app-field-value>
               </nz-card>
           </div>
       </div>
